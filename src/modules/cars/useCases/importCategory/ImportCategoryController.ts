@@ -7,6 +7,11 @@ class ImportCategoryController {
 
   handle(request: Request, response: Response) {
     const { file } = request;
+
+    if (!file) {
+      throw new Error("File is incorrect");
+    }
+
     this.importCategoryUseCase.execute(file);
 
     return response.status(201).send();
