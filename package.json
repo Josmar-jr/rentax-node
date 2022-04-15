@@ -5,8 +5,14 @@
   "license": "MIT",
   "husky": {
     "hooks": {
-      "pre-commit": "echo 'test'"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint": {
+    "*.ts": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts"
