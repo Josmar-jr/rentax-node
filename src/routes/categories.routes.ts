@@ -5,7 +5,7 @@ import { Category } from "../model/Category";
 const categoriesRoutes = Router();
 
 const categories: Category[] = [];
-c;
+
 categoriesRoutes.post("/", (request, response) => {
   const { name, description } = request.body;
 
